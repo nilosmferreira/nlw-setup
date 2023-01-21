@@ -59,12 +59,12 @@ export async function appRoutes(app: FastifyInstance) {
         dayHabits: true,
       },
     });
-    const completedHabit = day?.dayHabits.map((dayHabit) => {
+    const completedHabits = day?.dayHabits.map((dayHabit) => {
       return dayHabit.habit_id;
     });
     return {
       possibleHabits,
-      completedHabit,
+      completedHabits,
     };
   });
   app.patch('/habits/:id/toggle', async (req) => {
